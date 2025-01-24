@@ -1,7 +1,7 @@
 # RevShells
 
 
-RevShell is a Python-based tool that was built to have a variety of shells all in one place. This project was created to be used in CTFs and OSCP in mind. This tool allow users to choose from a list of reverse shells such as bash, netcat, ncat, lua, powershell, ruby, perl, java, and python. RevShells can encode these shells with URL encoding and base64.
+RevShell is a Python-based tool that was built to have a variety of shells all in one place. This project was created to be used in CTFs and OSCP in mind. This tool allows users to choose from a list of reverse shells such as bash, netcat, ncat, lua, powershell, ruby, perl, java, and python. RevShells can encode with URL and Base64 encoding.
 
 ## Usage
   `python3 revshells.py -h`  
