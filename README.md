@@ -43,9 +43,6 @@ Navigate to the Directory:
 
     cd RevShells
 
-Install Dependencies:
-
-    pip install -r requirements.txt
 
 
 # Disclaimer
