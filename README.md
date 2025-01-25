@@ -34,7 +34,7 @@ RevShell is a Python-based tool that was built to have a variety of shells all i
 
 Installation Instructions
 
-To use the Rev-Shell tool, follow these steps:  
+To use the RevShell tool, follow these steps:  
 Clone the Repository:
 
     git clone https://github.com/DelaDirty/RevShells.git  
